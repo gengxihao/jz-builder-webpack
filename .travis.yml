@@ -1,0 +1,24 @@
+# 语言
+language: node_js
+
+#
+sodo: false
+
+# 缓存
+cache:
+  # 是否开启缓存
+  apt: true
+  # 缓存目录
+  directories:
+    - node_modules
+
+# nodejs 版本
+node_js: stable
+
+install:
+  - npm install -D
+  - cd ./test/smoke/template
+  - npm install -D
+
+script:
+  - npm test
